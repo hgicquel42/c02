@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgicquel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 15:54:48 by hgicquel          #+#    #+#             */
-/*   Updated: 2021/07/01 16:15:04 by hgicquel         ###   ########.fr       */
+/*   Created: 2021/07/01 16:19:43 by hgicquel          #+#    #+#             */
+/*   Updated: 2021/07/01 16:46:45 by hgicquel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,28 @@
 // 	}
 // }
 
-char	*ft_strupcase(char *str)
+char	*ft_strcapitalize(char *str)
 {
 	int		i;
 	char	c;
+	int		s;
 
 	i = 0;
+	s = 1;
 	while (1)
 	{
 		c = str[i];
 		if (c == '\0')
 			break ;
-		if (c >= 'a' && c <= 'z')
+		if (s && c >= 'a' && c <= 'z')
 			str[i] = c - 'a' + 'A';
+		s = 0;
+		if (c < 'A' || c > 'z')
+			s = 1;
+		if (c > 'Z' && c < 'a')
+			s = 1;
+		if (c >= '0' && c <= '9')
+			s = 0;
 		i++;
 	}
 	return (str);
@@ -53,8 +62,9 @@ char	*ft_strupcase(char *str)
 
 // int	main(void)
 // {
-// 	char	str1[] = "Hello World!";
+// 	char	str1[] = 
+// 		"salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
 // 
-// 	ft_putstr(ft_strupcase(str1));
+// 	ft_putstr(ft_strcapitalize(str1));
 // 	return (0);
 // }

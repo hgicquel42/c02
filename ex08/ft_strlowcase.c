@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgicquel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 15:54:48 by hgicquel          #+#    #+#             */
-/*   Updated: 2021/07/01 16:15:04 by hgicquel         ###   ########.fr       */
+/*   Created: 2021/07/01 16:16:15 by hgicquel          #+#    #+#             */
+/*   Updated: 2021/07/01 16:18:03 by hgicquel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 // 	}
 // }
 
-char	*ft_strupcase(char *str)
+char	*ft_strlowcase(char *str)
 {
 	int		i;
 	char	c;
@@ -44,8 +44,8 @@ char	*ft_strupcase(char *str)
 		c = str[i];
 		if (c == '\0')
 			break ;
-		if (c >= 'a' && c <= 'z')
-			str[i] = c - 'a' + 'A';
+		if (c >= 'A' && c <= 'Z')
+			str[i] = c - 'A' + 'a';
 		i++;
 	}
 	return (str);
@@ -55,6 +55,6 @@ char	*ft_strupcase(char *str)
 // {
 // 	char	str1[] = "Hello World!";
 // 
-// 	ft_putstr(ft_strupcase(str1));
+// 	ft_putstr(ft_strlowcase(str1));
 // 	return (0);
 // }
