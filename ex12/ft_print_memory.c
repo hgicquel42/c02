@@ -35,7 +35,7 @@ void	ft_putaddrhex(void *addr)
 	n = (int) addr;
 	i = 0;
 	t = n;
-	while (i < 16)
+	while (i < 15)
 	{
 		if (t < 16)
 			write(1, "0", 1);
@@ -108,6 +108,6 @@ void	*ft_print_memory(void *addr, unsigned int size)
 // {
 // 	char	*str = 
 // 		"Bonjour les aminches\x07\x08\x09 c est fou tout ce qu'on peut faire";
-// 
+
 // 	ft_print_memory(str, 800);
 // }
