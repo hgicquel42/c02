@@ -28,11 +28,11 @@ void	ft_puthex(unsigned int n)
 
 void	ft_putaddrhex(void *addr)
 {
-	unsigned int	n;
+	unsigned long	n;
+	unsigned long	t;
 	unsigned int	i;
-	unsigned int	t;
 
-	n = (int) addr;
+	n = (unsigned long) addr;
 	i = 0;
 	t = n;
 	while (i < 15)
@@ -57,7 +57,7 @@ void	ft_print_memory_h(unsigned char *l, unsigned int i, unsigned int size)
 		{
 			c = l[j];
 			if (c < 16)
-				write(1, "0", 1);
+				write(1, "f", 1);
 			ft_puthex(c);
 		}
 		else
@@ -104,10 +104,9 @@ void	*ft_print_memory(void *addr, unsigned int size)
 	return (addr);
 }
 
-// int	main(void)
-// {
-// 	char	*str = 
-// 		"Bonjour les aminches\x07\x08\x09 c est fou tout ce qu'on peut faire";
+int	main(void)
+{
+	char	*str = "K";
 
-// 	ft_print_memory(str, 800);
-// }
+	ft_print_memory(str, 8);
+}

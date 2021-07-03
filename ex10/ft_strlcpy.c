@@ -39,17 +39,13 @@ unsigned int	ft_strlcpy(char *dest, char *str, unsigned int size)
 	char			c;
 
 	i = 0;
-	while (1)
+	while (i < size - 1)
 	{
 		c = str[i];
-		if (c == '\0')
-			break ;
-		if (i < size - 1)
-			dest[i] = c;
-		if (i == size - 1)
-			dest[i] = '\0';
+		dest[i] = c;
 		i++;
 	}
+	dest[i] = '\0';
 	return (i);
 }
 
