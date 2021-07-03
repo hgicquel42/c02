@@ -17,22 +17,14 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_puthex(char c)
+void	ft_puthex(unsigned char c)
 {
 	char	*hex;
 
 	hex = "0123456789abcdef";
 	ft_putchar('\\');
-	if (c < 16)
-	{
-		ft_putchar('0');
-		ft_putchar(hex[c / 1]);
-	}
-	else
-	{
-		ft_putchar(hex[c / 16]);
-		ft_putchar(hex[c % 16]);
-	}
+	ft_putchar(hex[c / 16]);
+	ft_putchar(hex[c % 16]);
 }
 
 void	ft_putstr_non_printable(char *str)
@@ -46,7 +38,7 @@ void	ft_putstr_non_printable(char *str)
 		c = str[i];
 		if (c == '\0')
 			break ;
-		if (c > 31)
+		if (c > 31 && c != 127)
 			ft_putchar(c);
 		else
 			ft_puthex(c);
@@ -57,8 +49,8 @@ void	ft_putstr_non_printable(char *str)
 // int	main()
 // {
 // 	char	*str;
-// 
-// 	str = "Coucou\ntu vas \x7f \x1b bien ?";
+
+// 	str = "Coucou\ntu vas \x7f \377 bien ?";
 // 	ft_putstr_non_printable(str);
 // 	return (0);
 // }
