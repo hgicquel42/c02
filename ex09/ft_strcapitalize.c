@@ -6,22 +6,22 @@
 /*   By: hgicquel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 16:19:43 by hgicquel          #+#    #+#             */
-/*   Updated: 2021/07/01 16:46:45 by hgicquel         ###   ########.fr       */
+/*   Updated: 2021/07/02 15:20:16 by hgicquel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <unistd.h>
-// 
+
 // void	ft_print(char c)
 // {
 // 	write(1, &c, 1);
 // }
-// 
+
 // void	ft_putstr(char *str)
 // {
 // 	char	c;
 // 	int		i;
-// 
+
 // 	i = 0;
 // 	while (1)
 // 	{
@@ -48,6 +48,8 @@ char	*ft_strcapitalize(char *str)
 			break ;
 		if (s && c >= 'a' && c <= 'z')
 			str[i] = c - 'a' + 'A';
+		if (!s && c >= 'A' && c <= 'Z')
+			str[i] = c - 'A' + 'a';
 		s = 0;
 		if (c < 'A' || c > 'z')
 			s = 1;
@@ -62,9 +64,9 @@ char	*ft_strcapitalize(char *str)
 
 // int	main(void)
 // {
-// 	char	str1[] = 
-// 		"salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
-// 
+// 	char	str1[] =
+// 		"SALUT, comment tu VAS ? 42mots quarante-deux; cinquante+et+un";
+
 // 	ft_putstr(ft_strcapitalize(str1));
 // 	return (0);
 // }
