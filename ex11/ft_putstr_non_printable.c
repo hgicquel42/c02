@@ -46,7 +46,7 @@ void	ft_putstr_non_printable(char *str)
 		c = str[i];
 		if (c == '\0')
 			break ;
-		if (c > 31 && c < 127)
+		if (c > 31)
 			ft_putchar(c);
 		else
 			ft_puthex(c);

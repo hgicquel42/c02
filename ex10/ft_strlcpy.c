@@ -11,17 +11,17 @@
 /* ************************************************************************** */
 
 // #include <unistd.h>
-// 
+
 // void	ft_print(char c)
 // {
 // 	write(1, &c, 1);
 // }
-// 
+
 // void	ft_putstr(char *str)
 // {
 // 	char	c;
 // 	int		i;
-// 
+
 // 	i = 0;
 // 	while (1)
 // 	{
@@ -44,7 +44,7 @@ unsigned int	ft_strlcpy(char *dest, char *str, unsigned int size)
 		c = str[i];
 		if (c == '\0')
 			break ;
-		if (i < size)
+		if (i < size - 1)
 			dest[i] = c;
 		if (i == size - 1)
 			dest[i] = '\0';
@@ -55,10 +55,10 @@ unsigned int	ft_strlcpy(char *dest, char *str, unsigned int size)
 
 // int	main(void)
 // {
-// 	char	str[] = "hello, it works";
+// 	char	str[] = "hello";
 // 	char	dest[] = "world";
-// 
-// 	ft_strlcpy(dest, str, 4);
+
+// 	ft_strlcpy(dest, str, 6);
 // 	ft_putstr(dest);
 // 	return (0);
 // }
