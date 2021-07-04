@@ -10,28 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <unistd.h>
-
-// void	ft_print(char c)
-// {
-// 	write(1, &c, 1);
-// }
-
-// void	ft_putstr(char *str)
-// {
-// 	char	c;
-// 	int		i;
-
-// 	i = 0;
-// 	while (1)
-// 	{
-// 		c = str[i];
-// 		if (c == '\0')
-// 			break ;
-// 		ft_print(c);
-// 		i++;
-// 	}
-// }
+// #include <stdio.h>
+// #include <strings.h>
 
 unsigned int	ft_strlcpy(char *dest, char *str, unsigned int size)
 {
@@ -39,24 +19,28 @@ unsigned int	ft_strlcpy(char *dest, char *str, unsigned int size)
 	char			c;
 
 	i = 0;
-	while (i < size - 1)
+	while (str[i] && size && i < size - 1)
 	{
-		c = str[i];
-		if (!c)
-			break ;
-		dest[i] = c;
+		dest[i] = str[i];
 		i++;
 	}
-	dest[i] = '\0';
+	if (size)
+		dest[i] = '\0';
+	i = 0;
+	while (str[i])
+		i++;
 	return (i);
 }
 
 // int	main(void)
 // {
 // 	char	str[] = "hello";
-// 	char	dest[] = "world";
+// 	char	dest1[] = "world";
+// 	char	dest2[] = "world";
 
-// 	ft_strlcpy(dest, str, 6);
-// 	ft_putstr(dest);
+// 	int n1 = ft_strlcpy(dest1, str, 126);
+// 	printf("%s %d\n", dest1, n1);
+// 	int n2 = strlcpy(dest2, str, 126);
+// 	printf("%s %d\n", dest2, n2);
 // 	return (0);
 // }
