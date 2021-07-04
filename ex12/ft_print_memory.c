@@ -104,9 +104,9 @@ void	*ft_print_memory(void *addr, unsigned int size)
 	return (addr);
 }
 
-int	main(void)
-{
-	char	*str = "Bonjour tout le monde\nbienvenue a 42\nhello world\nit works\n";
+// int	main(void)
+// {
+// 	char	*str = "Bonjour tout le monde\nbienvenue a 42\nhello world\nit works\n";
 
-	ft_print_memory(str, 100);
-}
+// 	ft_print_memory(str, 100);
+// }
