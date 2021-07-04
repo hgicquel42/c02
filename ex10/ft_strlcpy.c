@@ -42,6 +42,8 @@ unsigned int	ft_strlcpy(char *dest, char *str, unsigned int size)
 	while (i < size - 1)
 	{
 		c = str[i];
+		if (!c)
+			break ;
 		dest[i] = c;
 		i++;
 	}

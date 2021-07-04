@@ -57,7 +57,7 @@ void	ft_print_memory_h(unsigned char *l, unsigned int i, unsigned int size)
 		{
 			c = l[j];
 			if (c < 16)
-				write(1, "f", 1);
+				write(1, "0", 1);
 			ft_puthex(c);
 		}
 		else
