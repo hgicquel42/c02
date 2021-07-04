@@ -16,7 +16,6 @@
 unsigned int	ft_strlcpy(char *dest, char *str, unsigned int size)
 {
 	unsigned int	i;
-	char			c;
 
 	i = 0;
 	while (str[i] && size && i < size - 1)
@@ -38,9 +37,9 @@ unsigned int	ft_strlcpy(char *dest, char *str, unsigned int size)
 // 	char	dest1[] = "world";
 // 	char	dest2[] = "world";
 
-// 	int n1 = ft_strlcpy(dest1, str, 126);
+// 	int n1 = ft_strlcpy(dest1, str, 6);
 // 	printf("%s %d\n", dest1, n1);
-// 	int n2 = strlcpy(dest2, str, 126);
+// 	int n2 = strlcpy(dest2, str, 6);
 // 	printf("%s %d\n", dest2, n2);
 // 	return (0);
 // }
